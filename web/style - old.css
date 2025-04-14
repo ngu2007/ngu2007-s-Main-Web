@@ -1,0 +1,132 @@
+
+body {color: white; background-image: url("image/menu_background.png")}
+
+main {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 3rem;
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: left;
+    margin: 3rem;
+    margin-bottom: 0;
+    justify-content: center;
+    overflow-y: auto;
+    opacity: 1;
+}
+
+.main_web_link {align-items: center;display: flex; width: 50%;}
+.ul_link {
+    align-items: center;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.head_1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+nav ul li:hover::after {
+    content: " ";
+    width: 100%;
+    background: gray;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    bottom: -10px;
+    transition: 0.5s;
+}
+nav ul li:hover {
+    width: 100%;
+}
+
+nav ul li {
+    list-style: none; 
+    display: block; 
+    position: relative; 
+    width: 100%; 
+    float: left;
+}
+
+nav ul li a {
+    color: white; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    margin: 1rem;
+    display: block;
+    text-align: center;
+}
+
+nav a {color: white; text-decoration: none;}
+.margin_0 {margin: 0;}
+h2 {font-size: 2rem;}
+h3 {font-size: 1.75rem;}
+ul > li {margin-bottom: 0.25rem;}
+p {font-size: 1.1rem;}
+
+hr {
+    height:2px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-width:0;
+    color:gray;
+    background-color:gray
+}
+.hr_main_link {width: 120%; margin-top: 0; margin-bottom: 0;}
+
+@counter-style lam_viec {
+    system: fixed;
+    symbols: "💻" "📖" "📝" "📺" "🤝";
+    suffix: " "
+}
+.list_style_type_lam_viec {list-style-type: lam_viec;}
+
+@counter-style so_thich {
+    system: fixed;
+    symbols: "😴" "📺" "🎧" "📝" "🎮";
+    suffix: " "
+}
+.list_style_type_so_thich {list-style-type: so_thich;}
+
+.noi_dung {
+    width: 50%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:600px){
+    .noi_dung {
+        width: 100%;
+        box-sizing: content-box;
+        padding: initial;
+    }
+    main {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin: 1rem;
+    }
+    p {font-size: initial;}
+    h3 {font-size: 1.25rem;}
+    ul > li {margin-bottom: 0.1rem;}
+}
+
+footer {
+    font-size: 20px;
+    opacity: 0.5;
+    text-align: center; 
+    transition: 0.25s;
+    position: sticky;
+    margin-bottom: 0.5rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+}
+footer:hover {opacity: 1; transition: 0.25s;}
