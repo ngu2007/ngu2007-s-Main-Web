@@ -1,0 +1,129 @@
+body {color: white; background-image: url("image/menu_background_3.png")}
+main {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: left;
+    margin: 3rem;
+    margin-bottom: 0;
+    overflow-y: auto; /*Chỉ định hiển thị khi phần tử có quá nhiều nội dung (nếu tràn theo hàng ngang)*/
+}
+
+.main_web_link /*Ô của đường dẫn trang chủ (cùng được nằm trong nav)*/{
+    display: flex; 
+    color: white; 
+    text-decoration: none;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.main_web_link div {margin-top: 0.5rem;}
+a {color: white;text-decoration: none;}
+
+/*.navbar: thanh chứa những link dẫn tới web khác cùng mục (được đặt cùng cấp do chưa có nhiều nội dung */
+.navbar {display: flex;flex-direction: row;flex-wrap: wrap;}
+.navbar ul {
+    list-style-type: none;
+    overflow: hidden;
+    display: flex; /*Thiết lập bố cục cho phần tử con của ul*/
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /*Cho ul thuộc .navbar sang góc cuối cùng bên phải*/
+    align-items: center; /*Căn lề nội dung vào trung tâm trục tung. Nếu ô không chứa được hết nội dung thì ô sẽ tự tăng kích thước đồng đều theo mọi hướng*/
+    flex-grow: 1; /**/
+}
+.navbar ul li {display: inline;}
+.navbar ul li a /*Ô chứa đường link lúc bình thường*/{
+    color: white;
+    display: block;
+    text-transform: uppercase;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    border: groove gray 2px;
+}
+
+.link_border /*Ô chứa đường link tới trang mà mình hiện đang ở sẽ có viền trắng*/{
+    box-sizing: border-box;width: 100%;border: groove white 2px !important; }
+
+/*Khi di chuột tới ô chứa đường dẫn nằm trong thanh, nền của ô đấy sẽ tối đi*/
+.navbar ul li a:hover {background-color: rgba(0, 0, 0, 0.8);box-sizing: border-box;width: 100%;}
+
+h2 {font-size: 3rem; margin: 0;}
+h3 {font-size: 1.5rem;}
+p, ul > li {font-size: 1.1rem; margin: 0;}
+
+hr {
+    height:2px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-width:0;
+    color:gray;
+    background-color:gray
+}
+.hr_main_link {width: 120%; margin-top: 0; margin-bottom: 0;}
+
+/*Tự tạo kiểu ("style-type") cho list-style-type*/
+@counter-style lam_viec {system: fixed;symbols: "💻" "📖" "📝" "🤝";suffix: " ";}
+.list_style_type_lam_viec {list-style-type: lam_viec;}
+
+@counter-style so_thich {system: fixed;symbols: "😴" "📺" "🎧" "📝" "🎮";suffix: " "}
+.list_style_type_so_thich {list-style-type: so_thich;}
+
+@counter-style cau_hoi {system: cyclic;symbols: "❓" "💡";suffix: " ";}
+.list_style_type_cau_hoi {list-style-type: cau_hoi;}
+
+.noi_dung {
+    width: 50%;
+    float: left; /*Chuyển vị trí và định dạng nội dung*/
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/*Tự điều chỉnh kích cỡ tùy vào chiều rộng tối đa (max-width)*/
+@media screen and (max-width:850px) {main {padding-left: 1.5rem;padding-right: 1.5rem; margin: 2rem;}}
+@media screen and (max-width:750px){
+    .noi_dung {width: 100%;}
+    ul > li {margin-bottom: 0.1rem;}
+    .navbar ul li a {padding: 1rem;}
+}
+@media screen and (max-width: 650px) {.navbar ul {justify-content: flex-start;}}
+@media screen and (max-width:500px) {
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    p {font-size: initial;}
+    h3 {font-size: 1.25rem;}
+    h2 {font-size: 2.5rem;}
+}
+@media screen and (max-width:400px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+footer /*Chân trang web (được làm một cách cẩu thả)*/{
+    font-size: 20px;
+    opacity: 0.5; /*Độ trong suốt*/
+    text-align: center; 
+    transition: 0.25s; /*Kiểm soát tốc độ chuyển đổi của phần tử khi thuộc tính CSS thay đổi*/
+    position: sticky; /*Dính vào một khu vực cố định dựa theo việc cuộn vị trí trang (như mấy cái quảng cáo) */
+    margin-bottom: 0.5rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+}
+footer:hover /**/{opacity: 1; transition: 0.25s;}
+.changelog {
+    width: 100%;
+    height: 250px;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.changelog p {padding-left: 15px; padding-right: 15px;}
+span, a > b {color: #6495ed;}
