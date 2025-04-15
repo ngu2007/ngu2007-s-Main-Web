@@ -126,5 +126,4 @@ footer:hover /**/{opacity: 1; transition: 0.25s;}
     background-color: rgba(0, 0, 0, 0.6);
 }
 .changelog ~ p {padding-left: 15px; padding-right: 15px; padding-top: 15px;}
-.changelog  hr {padding-left: 15px; padding-right: 15px}
 span, a > b {color: #6495ed;}
